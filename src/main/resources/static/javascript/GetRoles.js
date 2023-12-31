@@ -5,7 +5,7 @@ for (const rolesSelect of allRolesSelect) {
     getRoles(rolesSelect)
 }
 
-function getRoles (rolesModal){
+function getRoles(rolesModal) {
     fetch('/roles')
         .then(response => response.json())
         .then(roles => {
@@ -15,6 +15,7 @@ function getRoles (rolesModal){
         })
         .catch(error => console.error('Ошибка:', error));
 }
+
 // fetch('/roles')
 //     .then(response => response.json())
 //     .then(roles => {

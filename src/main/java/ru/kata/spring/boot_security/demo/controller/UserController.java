@@ -51,16 +51,6 @@ public class UserController {
 
     @PostMapping(value = "/add")
     public ResponseEntity<HttpStatus> add(@RequestBody @Valid User user) {
-        //BindingResult bindingResult
-//        if (bindingResult.hasErrors()) {
-//            StringBuilder errorMsg = new StringBuilder();
-//            List<FieldError> errors = bindingResult.getFieldErrors();
-//            for (FieldError error : errors) {
-//                errorMsg.append(error.getField() + " - " + error.getDefaultMessage() + ';');
-//            }
-//
-//        }
-// TODO
         userService.add(user);
         return ResponseEntity.ok(HttpStatus.OK);
     }
@@ -69,22 +59,6 @@ public class UserController {
         userService.update(user);
         return ResponseEntity.ok(HttpStatus.OK);
     }
-
-//    @DeleteMapping(value = "/delete")
-//    public ResponseEntity<HttpStatus> delete(@RequestBody Long id) {
-//        userService.deleteById(id);
-//        return ResponseEntity.ok(HttpStatus.OK);
-//    } //Здесь отправлять просто цифру id в http запросе
-//    //TODO
-
-
-//     @DeleteMapping(value = "/delete")
-//    public ResponseEntity<HttpStatus> delete(@RequestParam(value="id") Long id) {
-//        userService.deleteById(id);
-//        return ResponseEntity.ok(HttpStatus.OK);
-//    } //Здесь отправлять просто цифру id в http запросе
-//    //TODO
-
 
     @DeleteMapping(value = "/delete/{id}")
     public ResponseEntity<HttpStatus> delete(@PathVariable("id") Long id) {

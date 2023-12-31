@@ -2,11 +2,13 @@ function getEditModal(id) {
     let form = document.forms.namedItem("editForm");
     fillModal(id, form)
 }
+
 function getDeleteModal(id) {
     let form = document.forms.namedItem("deleteForm");
     fillModal(id, form)
 }
-function fillModal(id,form){
+
+function fillModal(id, form) {
     fetch('/userById/' + id)
         .then(response => response.json())
         .then(user => {
@@ -15,8 +17,8 @@ function fillModal(id,form){
             form.elements.namedItem("lastName").value = user.lastName;
             form.elements.namedItem("age").value = user.age;
             form.elements.namedItem("email").value = user.email;
-            if(form.elements.namedItem("password")!=null){
-                form.elements.namedItem("password").value ="";
+            if (form.elements.namedItem("password") != null) {
+                form.elements.namedItem("password").value = "";
             }
         })
         .catch(error => console.error('Ошибка:', error));

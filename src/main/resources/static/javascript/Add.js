@@ -33,7 +33,7 @@ function add(e) {
             getUserList();
             document.getElementById("tabTableUser").click()
             for (const formElem of addForm) {
-                formElem.value="";
+                formElem.value = "";
             }
             for (const rolesSelect of rolesOption) {
                 rolesSelect.selected = false
