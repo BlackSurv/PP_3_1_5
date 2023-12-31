@@ -22,8 +22,6 @@ fetch('/userData')
             document.getElementById("admin-tab").classList.add("active");
             document.getElementById("admin").classList.add("show", "active");
         }
-
-
         const tableBody = document.getElementById("userData");
 
         let row = tableBody.insertRow();

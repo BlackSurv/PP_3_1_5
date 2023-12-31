@@ -1,6 +1,5 @@
-let tableBody = document.getElementById("usersTBody");
-
 function getUserList() {
+    const tableBody = document.getElementById("usersTBody");
     fetch('/usersList')
         .then(response => response.json())
         .then(users => {

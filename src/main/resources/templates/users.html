@@ -100,7 +100,7 @@
                         <h4 class="breadcrumb mb-0 ">Add new user</h4>
                     </nav>
                     <div class="px-3 d-flex flex-column align-items-center">
-                        <form name="addForm" onsubmit="add()"
+                        <form name="addForm"
                               class="d-flex flex-column align-items-center p-4 col-lg-6 col-xl-4 col-md">
                             <label class="font-weight-bolder mb-0 mt-3" for="firstnameNewUser">First name</label>
                             <input class="form-control" type="text"
@@ -121,7 +121,7 @@
                                    placeholder="Age">
 
                             <label class="font-weight-bolder mb-0 mt-3" for="emailNewUser">Email</label>
-                            <input class="form-control" type="text"
+                            <input class="form-control" type="email"
                                    id="emailNewUser"
                                    name="email"
                                    placeholder="Email">
@@ -195,7 +195,7 @@
                     </button>
                 </div>
 
-                <form onsubmit="update()" name="editForm">
+                <form  name="editForm">
                     <div class="modal-body px-3 d-flex flex-column align-items-center">
                         <div class="d-flex flex-column align-items-center">
                             <label class="font-weight-bolder mb-0"
@@ -227,7 +227,7 @@
 
                             <label class="font-weight-bolder mb-0 mt-3"
                                    for="emailEditModal">Email</label>
-                            <input class="form-control" type="text"
+                            <input class="form-control" type="email"
                                    id="emailEditModal"
                                    name="email"
                                    placeholder="Email">
@@ -270,7 +270,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form onsubmit="remove()" name="deleteForm">
+                <form  name="deleteForm">
                     <div class="modal-body px-3 d-flex flex-column align-items-center">
                         <h5>Вы уверены, что хотите удалить пользователя?</h5>
                         <div class="d-flex flex-column align-items-center">
