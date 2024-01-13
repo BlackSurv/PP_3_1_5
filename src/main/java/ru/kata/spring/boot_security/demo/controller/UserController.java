@@ -24,12 +24,12 @@ public class UserController {
         this.roleService = roleService;
     }
 
-    @GetMapping(value = "/usersList")
+    @GetMapping(value = "/users")
     public ResponseEntity<List<User>> getUserList() {
         List<User> userList = userService.getAllUsers();
         return userList == null && userList.isEmpty() ?
                 new ResponseEntity<>(userList, HttpStatus.NOT_FOUND) :
-                new ResponseEntity<>(userList, HttpStatus.OK) ;
+                new ResponseEntity<>(userList, HttpStatus.OK);
     }
 
     @GetMapping(value = "/roles")
@@ -37,12 +37,12 @@ public class UserController {
         Set<Role> roleSet = roleService.getAllRoles();
         return roleSet == null && roleSet.isEmpty() ?
                 new ResponseEntity<>(roleSet, HttpStatus.NOT_FOUND) :
-                new ResponseEntity<>(roleSet, HttpStatus.OK) ;
+                new ResponseEntity<>(roleSet, HttpStatus.OK);
     }
 
 
-    @GetMapping("/userById/{id}")
-    public ResponseEntity<User> getUserFromID(@PathVariable long id) {
+    @GetMapping("/user/{id}")
+    public ResponseEntity<User> getUser(@PathVariable long id) {
         final User user = userService.getUserById(id);
         return user != null
                 ? new ResponseEntity<>(user, HttpStatus.OK)
@@ -54,6 +54,7 @@ public class UserController {
         userService.add(user);
         return ResponseEntity.ok(HttpStatus.OK);
     }
+
     @PatchMapping(value = "/update")
     public ResponseEntity<HttpStatus> update(@RequestBody @Valid User user) {
         userService.update(user);

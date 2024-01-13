@@ -12,8 +12,8 @@ import ru.kata.spring.boot_security.demo.security.PersonDetails;
 @RestController
 public class AuthController {
 
-    @GetMapping("/userData")
-    public ResponseEntity<User> showUserDetails (Authentication authentication){
+    @GetMapping("/user-data")
+    public ResponseEntity<User> showUserDetails(Authentication authentication) {
         PersonDetails personDetails = (PersonDetails) authentication.getPrincipal();
         return new ResponseEntity<>(personDetails.getUser(), HttpStatus.OK);
     }

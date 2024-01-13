@@ -11,12 +11,11 @@ public class ViewController {
 
     @GetMapping(value = "/admin")
     public String usersList(Model model, Authentication authentication) {
-            return "users";
+        return "users";
     }
 
     @GetMapping("/user")
     public String userPage(Model model, Authentication authentication) {
-
         return "users";
     }
 }

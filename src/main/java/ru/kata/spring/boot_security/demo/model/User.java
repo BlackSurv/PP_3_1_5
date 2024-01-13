@@ -67,6 +67,15 @@ public class User {
         this.age = age;
     }
 
+    public User(String firstName, String lastName, String email, byte age, String username, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.age = age;
+        this.username = username;
+        this.password = password;
+    }
+
     public Long getId() {
         return id;
     }

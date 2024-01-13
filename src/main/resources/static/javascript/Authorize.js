@@ -1,4 +1,4 @@
-fetch('/userData')
+fetch('/user-data')
     .then(response => response.json())
     .then(user => {
         const emailHeader = document.getElementById("EmailHeader");
