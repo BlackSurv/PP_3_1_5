@@ -15,7 +15,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByUsername(String username);
 
     @Query("SELECT u from User u JOIN FETCH u.roles WHERE u.email = ?1")
-    Optional<User> findByEmail(String username);
+    Optional<User> findByEmail(String email);
 
     @Override
     @Query("SELECT DISTINCT u from User u JOIN FETCH u.roles")
